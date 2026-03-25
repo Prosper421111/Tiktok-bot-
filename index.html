@@ -917,58 +917,5 @@
     document.getElementById('balance-modal').classList.remove('open');
   }
 </script>
-<script>
-function goFullScreen() {
-  const el = document.documentElement;
-
-  if (el.requestFullscreen) {
-    el.requestFullscreen();
-  } else if (el.webkitRequestFullscreen) {
-    el.webkitRequestFullscreen();
-  } else if (el.msRequestFullscreen) {
-    el.msRequestFullscreen();
-  }
-}
-
-// First click → fullscreen
-document.addEventListener("click", function () {
-  goFullScreen();
-}, { once: true });
-
-// Detect exit from fullscreen
-document.addEventListener("fullscreenchange", function () {
-  if (!document.fullscreenElement) {
-    showOverlay();
-  }
-});
-
-// Show overlay instead of reloading
-function showOverlay() {
-  const overlay = document.createElement("div");
-  overlay.innerHTML = "Tap to continue";
-  
-  Object.assign(overlay.style, {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    background: "black",
-    color: "white",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: "24px",
-    zIndex: 9999
-  });
-
-  overlay.addEventListener("click", () => {
-    goFullScreen();
-    overlay.remove();
-  });
-
-  document.body.appendChild(overlay);
-}
-</script>
 </body>
 </html>
