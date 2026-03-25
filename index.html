@@ -4,6 +4,9 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <title>TikTok Coins</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=TikTok+Sans:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap');
 
@@ -913,6 +916,24 @@
     }
     document.getElementById('balance-modal').classList.remove('open');
   }
+</script>
+<script>
+function goFullScreen() {
+  const el = document.documentElement;
+
+  if (el.requestFullscreen) {
+    el.requestFullscreen();
+  } else if (el.webkitRequestFullscreen) {
+    el.webkitRequestFullscreen();
+  } else if (el.msRequestFullscreen) {
+    el.msRequestFullscreen();
+  }
+}
+
+// trigger on first tap anywhere
+document.addEventListener("click", function () {
+  goFullScreen();
+}, { once: true });
 </script>
 </body>
 </html>
